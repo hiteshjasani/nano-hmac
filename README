@@ -1,0 +1,32 @@
+
+INTRO
+
+nano-hmac follows in the footsteps of dons' nano-md5 library in an attempt
+to create a minimal library that provides access to the HMAC capability
+of OpenSSL.
+
+The intent of the library is to be focused just on HMAC.
+
+It is a working release and does pass the tests outlined in RFC's 2104 and 2202.
+
+
+INSTALL
+
+  % runhaskell Setup.lhs configure
+  % runhaskell Setup.lhs build
+  % runhaskell Setup.lhs haddock
+  % sudo runhaskell Setup.lhs install
+
+
+NOTES
+
+You may encounter problems building the documentation if you're using
+a version of haddock before version 2.0.0.0.
+
+
+ACKNOWLEDGEMENTS
+
+Many good ideas regarding implementation and testing have been borrowed
+from Don Stewart's (dons) nano-md5 library.  Anything that is buggy or
+doesn't make sense would be my own unique contribution.
+
