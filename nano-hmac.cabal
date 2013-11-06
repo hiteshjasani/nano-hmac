@@ -14,10 +14,12 @@ Tested-With:         GHC == 6.8.2
 extra-source-files:  README test/Makefile test/hmac_hu.hs
 
 library
-  build-depends:     base       == 4.2.*,
-                     bytestring == 0.9.1.*
+  build-depends:     base, bytestring
   exposed-modules:   Data.Digest.OpenSSL.HMAC
-  ghc-options:       -Wall -O2 -fvia-C
+  if impl(ghc >= 7.0.1)
+    ghc-options:       -Wall -O2
+  else
+    ghc-options:       -Wall -O2 -fvia-C
   extensions:        ForeignFunctionInterface, BangPatterns, CPP
   includes:          openssl/hmac.h
   extra-libraries:   crypto ssl
